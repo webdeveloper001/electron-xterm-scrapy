@@ -20,7 +20,7 @@ export default class Home extends Component {
             'scrapy crawl bcpa_prop -a input_file=INPUT_FILE_PATH'
           ],
           input_file: '',
-          output_folder: 'scrappers/bcpa'
+          output_folder: 'BASE_PATH/scrappers/bcpa'
         },
         {
           name: 'Miamidade',
@@ -29,7 +29,7 @@ export default class Home extends Component {
             'scrapy crawl miami_prop -a input_file=INPUT_FILE_PATH'
           ],
           input_file: '',
-          output_folder: 'scrappers/miamidade'
+          output_folder: 'BASE_PATH/scrappers/miamidade'
         },
         {
           name: 'New BCPA',
@@ -38,7 +38,7 @@ export default class Home extends Component {
             'python bcpa.py INPUT_FILE_PATH'
           ],
           input_file: '',
-          output_folder: 'scrappers/new_bcpa'
+          output_folder: 'BASE_PATH/scrappers/new_bcpa'
         },
         {
           name: 'PBC gov',
@@ -47,7 +47,7 @@ export default class Home extends Component {
             'python pbcgov.py INPUT_FILE_PATH'
           ],
           input_file: '',
-          output_folder: 'scrappers/pbcgov'
+          output_folder: 'BASE_PATH/scrappers/pbcgov'
         }
       ]
     }
@@ -139,7 +139,7 @@ export default class Home extends Component {
                       }}
                       disabled={scrapper.input_file === ""} >Run!</button>
                     <button className="btn btn-primary" onClick={() => {
-                      this.openDirectory(scrapper.output_folder);
+                      this.openDirectory(scrapper.output_folder.replace('BASE_PATH', this.base_path));
                     }}>Open Output folder</button>
                   </div>
                 </div>
