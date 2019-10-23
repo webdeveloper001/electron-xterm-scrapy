@@ -1,4 +1,3 @@
-<div align="center">
 <div>
 This project is for running several scrapy projects from one UI.
 The app is based on <a href="https://github.com/electron-react-boilerplate/electron-react-boilerplate">electron-react-boilerplate</a> and uses <a href="https://xtermjs.org/">Xterm.js</a> for connecting terminal to the UI.
